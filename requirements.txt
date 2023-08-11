@@ -1,2 +1,2 @@
 transformers
-tensorflow
+tensorflow==2.8.0
