@@ -1,3 +1,1 @@
-transformers
-tensorflow
-torch
+transformers[torch]
