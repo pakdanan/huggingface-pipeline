@@ -7,7 +7,7 @@ option = st.selectbox(
         "Classify Text (default model)",
         "Question Answering (default model)",
         "Text Generation (default model)",
-        "Named Entity Recognition (cahya/xlm-roberta-large-indonesian-NER)",
+        "Named Entity Recognition (cahya/bert-base-indonesian-NER)",
         "Summarization (default model)",
         "Translation (default model)",
     ],
@@ -32,10 +32,10 @@ elif option == "Text Generation (default model)":
         text_generator = pipeline("text-generation")
         answer = text_generator(text)
         st.write(answer)
-elif option == "Named Entity Recognition (cahya/xlm-roberta-large-indonesian-NER)":
+elif option == "Named Entity Recognition (cahya/bert-base-indonesian-NER)":
     text = st.text_area(label="Enter text")
     if st.button("Recognize"):
-        ner = pipeline("token-classification", model="cahya/xlm-roberta-large-indonesian-NER")
+        ner = pipeline("token-classification", model="cahya/bert-base-indonesian-NER")
         answer = ner(text)
         st.write(answer)
 elif option == "Summarization (default model)":
