@@ -35,7 +35,7 @@ elif option == "Text Generation":
 elif option == "Named Entity Recognition":
     text = st.text_area(label="Enter text")
     if text:
-        ner = pipeline("token-classification", model="cahya/xlm-roberta-large-indonesian-NER")
+        ner = pipeline("token-classification", model="cahya/xlm-roberta-base-indonesian-NER")
         answer = ner(text)
         st.write(answer)
 elif option == "Summarization":
