@@ -4,12 +4,12 @@ from transformers import pipeline
 option = st.selectbox(
     "Select an Option",
     [
-        "Classify Text",
-        "Question Answering",
-        "Text Generation",
-        "Named Entity Recognition",
-        "Summarization",
-        "Translation",
+        "Classify Text (default model)",
+        "Question Answering (default model)",
+        "Text Generation (default model)",
+        "Named Entity Recognition (cahya/xlm-roberta-large-indonesian-NER)",
+        "Summarization (default model)",
+        "Translation (default model)",
     ],
 )
 
@@ -35,7 +35,7 @@ elif option == "Text Generation":
 elif option == "Named Entity Recognition":
     text = st.text_area(label="Enter text")
     if text:
-        ner = pipeline("token-classification", model="cahya/xlm-roberta-base-indonesian-NER")
+        ner = pipeline("token-classification", model="cahya/xlm-roberta-large-indonesian-NER")
         answer = ner(text)
         st.write(answer)
 elif option == "Summarization":
@@ -45,7 +45,7 @@ elif option == "Summarization":
         summary = summarizer(article, max_length=400, min_length=30)
         st.write(summary)
 elif option == "Translation":
-    translator = pipeline("translation_en_to_id")
+    translator = pipeline("translation_en_to_de")
     text = st.text_area(label="Enter text")
     if text:
         translation = translator(text)
